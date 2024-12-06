@@ -1,0 +1,939 @@
+ERROR - 2024-10-28 06:26:16 --> mysqli_sql_exception: Not unique table/alias: 'games' in C:\xampp\htdocs\SimpleApi\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\SimpleApi\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\SimpleApi\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\SimpleApi\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\SimpleApi\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\SimpleApi\app\Models\ApiModel.php(43): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\SimpleApi\app\Controllers\HomeController.php(229): App\Models\ApiModel->getPlayRoundScore('2024-10-26 11:3...', '72')
+#6 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(933): App\Controllers\HomeController->playRoundScore()
+#7 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+#8 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\SimpleApi\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\SimpleApi\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\SimpleApi\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-10-28 06:26:16 --> CodeIgniter\Database\Exceptions\DatabaseException: Not unique table/alias: 'games'
+[Method: GET, Route: getplayroundscore]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = :DateTime:
+AND `StudentId` = :StudentId:
+AND `GameType` = :GameType:', [...], false)
+ 2 APPPATH\Models\ApiModel.php(43): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\HomeController.php(229): App\Models\ApiModel->getPlayRoundScore('2024-10-26 11:31:14', '72')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->playRoundScore()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-28 06:26:16 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Not unique table/alias: 'games'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = \'2024-10-26 11:31:14\'
+AND `StudentId` = \'72\'
+AND `GameType` = 2')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = \'2024-10-26 11:31:14\'
+AND `StudentId` = \'72\'
+AND `GameType` = 2')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = :DateTime:
+AND `StudentId` = :StudentId:
+AND `GameType` = :GameType:', [...], false)
+ 4 APPPATH\Models\ApiModel.php(43): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\HomeController.php(229): App\Models\ApiModel->getPlayRoundScore('2024-10-26 11:31:14', '72')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->playRoundScore()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-28 06:26:16 --> [Caused by] mysqli_sql_exception: Not unique table/alias: 'games'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = \'2024-10-26 11:31:14\'
+AND `StudentId` = \'72\'
+AND `GameType` = 2', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = \'2024-10-26 11:31:14\'
+AND `StudentId` = \'72\'
+AND `GameType` = 2')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = \'2024-10-26 11:31:14\'
+AND `StudentId` = \'72\'
+AND `GameType` = 2')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = :DateTime:
+AND `StudentId` = :StudentId:
+AND `GameType` = :GameType:', [...], false)
+ 5 APPPATH\Models\ApiModel.php(43): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\HomeController.php(229): App\Models\ApiModel->getPlayRoundScore('2024-10-26 11:31:14', '72')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->playRoundScore()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-28 06:27:09 --> mysqli_sql_exception: Not unique table/alias: 'games' in C:\xampp\htdocs\SimpleApi\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\SimpleApi\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\SimpleApi\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\SimpleApi\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\SimpleApi\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\SimpleApi\app\Models\ApiModel.php(43): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\SimpleApi\app\Controllers\HomeController.php(229): App\Models\ApiModel->getPlayRoundScore('2024-10-26 11:3...', '72')
+#6 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(933): App\Controllers\HomeController->playRoundScore()
+#7 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+#8 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\SimpleApi\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\SimpleApi\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\SimpleApi\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-10-28 06:27:09 --> CodeIgniter\Database\Exceptions\DatabaseException: Not unique table/alias: 'games'
+[Method: GET, Route: getplayroundscore]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = :DateTime:
+AND `StudentId` = :StudentId:
+AND `GameType` = :GameType:', [...], false)
+ 2 APPPATH\Models\ApiModel.php(43): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\HomeController.php(229): App\Models\ApiModel->getPlayRoundScore('2024-10-26 11:31:14', '72')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->playRoundScore()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-28 06:27:09 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Not unique table/alias: 'games'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = \'2024-10-26 11:31:14\'
+AND `StudentId` = \'72\'
+AND `GameType` = 2')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = \'2024-10-26 11:31:14\'
+AND `StudentId` = \'72\'
+AND `GameType` = 2')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = :DateTime:
+AND `StudentId` = :StudentId:
+AND `GameType` = :GameType:', [...], false)
+ 4 APPPATH\Models\ApiModel.php(43): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\HomeController.php(229): App\Models\ApiModel->getPlayRoundScore('2024-10-26 11:31:14', '72')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->playRoundScore()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-28 06:27:09 --> [Caused by] mysqli_sql_exception: Not unique table/alias: 'games'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = \'2024-10-26 11:31:14\'
+AND `StudentId` = \'72\'
+AND `GameType` = 2', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = \'2024-10-26 11:31:14\'
+AND `StudentId` = \'72\'
+AND `GameType` = 2')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = \'2024-10-26 11:31:14\'
+AND `StudentId` = \'72\'
+AND `GameType` = 2')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = :DateTime:
+AND `StudentId` = :StudentId:
+AND `GameType` = :GameType:', [...], false)
+ 5 APPPATH\Models\ApiModel.php(43): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\HomeController.php(229): App\Models\ApiModel->getPlayRoundScore('2024-10-26 11:31:14', '72')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->playRoundScore()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-28 06:27:16 --> mysqli_sql_exception: Not unique table/alias: 'games' in C:\xampp\htdocs\SimpleApi\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\SimpleApi\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\SimpleApi\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\SimpleApi\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\SimpleApi\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\SimpleApi\app\Models\ApiModel.php(43): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\SimpleApi\app\Controllers\HomeController.php(229): App\Models\ApiModel->getPlayRoundScore('2024-10-26 11:3...', '72')
+#6 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(933): App\Controllers\HomeController->playRoundScore()
+#7 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+#8 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\SimpleApi\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\SimpleApi\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\SimpleApi\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-10-28 06:27:16 --> CodeIgniter\Database\Exceptions\DatabaseException: Not unique table/alias: 'games'
+[Method: GET, Route: getplayroundscore]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = :DateTime:
+AND `StudentId` = :StudentId:
+AND `GameType` = :GameType:', [...], false)
+ 2 APPPATH\Models\ApiModel.php(43): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\HomeController.php(229): App\Models\ApiModel->getPlayRoundScore('2024-10-26 11:31:14', '72')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->playRoundScore()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-28 06:27:16 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Not unique table/alias: 'games'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = \'2024-10-26 11:31:14\'
+AND `StudentId` = \'72\'
+AND `GameType` = 2')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = \'2024-10-26 11:31:14\'
+AND `StudentId` = \'72\'
+AND `GameType` = 2')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = :DateTime:
+AND `StudentId` = :StudentId:
+AND `GameType` = :GameType:', [...], false)
+ 4 APPPATH\Models\ApiModel.php(43): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\HomeController.php(229): App\Models\ApiModel->getPlayRoundScore('2024-10-26 11:31:14', '72')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->playRoundScore()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-28 06:27:16 --> [Caused by] mysqli_sql_exception: Not unique table/alias: 'games'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = \'2024-10-26 11:31:14\'
+AND `StudentId` = \'72\'
+AND `GameType` = 2', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = \'2024-10-26 11:31:14\'
+AND `StudentId` = \'72\'
+AND `GameType` = 2')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = \'2024-10-26 11:31:14\'
+AND `StudentId` = \'72\'
+AND `GameType` = 2')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = :DateTime:
+AND `StudentId` = :StudentId:
+AND `GameType` = :GameType:', [...], false)
+ 5 APPPATH\Models\ApiModel.php(43): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\HomeController.php(229): App\Models\ApiModel->getPlayRoundScore('2024-10-26 11:31:14', '72')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->playRoundScore()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-28 06:35:33 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\SimpleApi\system\Email\Email.php:1762
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mail(): Failed ...', 'C:\\xampp\\htdocs...', 1762)
+#1 C:\xampp\htdocs\SimpleApi\system\Email\Email.php(1762): mail('raeeskhan3370@g...', '=?UTF-8?Q?Provi...', 'This is a multi...', 'Date: Mon, 28 O...', '-f proviewgolf@...')
+#2 C:\xampp\htdocs\SimpleApi\system\Email\Email.php(1694): CodeIgniter\Email\Email->sendWithMail()
+#3 C:\xampp\htdocs\SimpleApi\system\Email\Email.php(1589): CodeIgniter\Email\Email->spoolEmail()
+#4 C:\xampp\htdocs\SimpleApi\app\Controllers\HomeController.php(387): CodeIgniter\Email\Email->send()
+#5 C:\xampp\htdocs\SimpleApi\app\Controllers\HomeController.php(419): App\Controllers\HomeController->sendMail('raeeskhan3370@g...', 'Y$GzDNu#14oP')
+#6 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(933): App\Controllers\HomeController->RecoverPassword()
+#7 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+#8 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\SimpleApi\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\SimpleApi\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\SimpleApi\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2024-10-28 06:35:33 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2024-10-28 06:35:33 --> 
+CRITICAL - 2024-10-28 06:35:33 --> Error: Object of class CodeIgniter\Database\MySQLi\Builder could not be converted to string
+[Method: GET, Route: RecoverPassword]
+in APPPATH\Models\ApiModel.php on line 566.
+ 1 APPPATH\Controllers\HomeController.php(422): App\Models\ApiModel->updatePass('raeeskhan3370@gmail.com', '$2y$12$Ga.pFM7UHHYo1AcGTnPOjuP5rYvrpcfos9KgmESLxOg.P1aK18jHS')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->RecoverPassword()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-28 06:36:34 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\SimpleApi\system\Email\Email.php:1762
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mail(): Failed ...', 'C:\\xampp\\htdocs...', 1762)
+#1 C:\xampp\htdocs\SimpleApi\system\Email\Email.php(1762): mail('raeeskhan3370@g...', '=?UTF-8?Q?Provi...', 'This is a multi...', 'Date: Mon, 28 O...', '-f proviewgolf@...')
+#2 C:\xampp\htdocs\SimpleApi\system\Email\Email.php(1694): CodeIgniter\Email\Email->sendWithMail()
+#3 C:\xampp\htdocs\SimpleApi\system\Email\Email.php(1589): CodeIgniter\Email\Email->spoolEmail()
+#4 C:\xampp\htdocs\SimpleApi\app\Controllers\HomeController.php(387): CodeIgniter\Email\Email->send()
+#5 C:\xampp\htdocs\SimpleApi\app\Controllers\HomeController.php(419): App\Controllers\HomeController->sendMail('raeeskhan3370@g...', 'h8jqVPwPgAdX')
+#6 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(933): App\Controllers\HomeController->RecoverPassword()
+#7 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+#8 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\SimpleApi\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\SimpleApi\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\SimpleApi\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2024-10-28 06:36:34 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2024-10-28 06:36:34 --> 
+CRITICAL - 2024-10-28 06:36:35 --> Error: Object of class CodeIgniter\Database\MySQLi\Builder could not be converted to string
+[Method: GET, Route: RecoverPassword]
+in APPPATH\Models\ApiModel.php on line 566.
+ 1 APPPATH\Controllers\HomeController.php(422): App\Models\ApiModel->updatePass('raeeskhan3370@gmail.com', '$2y$12$EV4vy2ObrYLTTywwJ53JCORbPdxXJgFwQEaoV1gq9/F/inSwCnl0W')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->RecoverPassword()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-28 06:37:20 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\SimpleApi\system\Email\Email.php:1762
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mail(): Failed ...', 'C:\\xampp\\htdocs...', 1762)
+#1 C:\xampp\htdocs\SimpleApi\system\Email\Email.php(1762): mail('raeeskhan3370@g...', '=?UTF-8?Q?Provi...', 'This is a multi...', 'Date: Mon, 28 O...', '-f proviewgolf@...')
+#2 C:\xampp\htdocs\SimpleApi\system\Email\Email.php(1694): CodeIgniter\Email\Email->sendWithMail()
+#3 C:\xampp\htdocs\SimpleApi\system\Email\Email.php(1589): CodeIgniter\Email\Email->spoolEmail()
+#4 C:\xampp\htdocs\SimpleApi\app\Controllers\HomeController.php(387): CodeIgniter\Email\Email->send()
+#5 C:\xampp\htdocs\SimpleApi\app\Controllers\HomeController.php(419): App\Controllers\HomeController->sendMail('raeeskhan3370@g...', 'D#uDBuibrU%&')
+#6 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(933): App\Controllers\HomeController->RecoverPassword()
+#7 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+#8 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\SimpleApi\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\SimpleApi\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\SimpleApi\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2024-10-28 06:37:20 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2024-10-28 06:37:20 --> 
+CRITICAL - 2024-10-28 06:37:21 --> Error: Object of class CodeIgniter\Database\MySQLi\Builder could not be converted to string
+[Method: GET, Route: RecoverPassword]
+in APPPATH\Models\ApiModel.php on line 566.
+ 1 APPPATH\Controllers\HomeController.php(422): App\Models\ApiModel->updatePass('raeeskhan3370@gmail.com', '$2y$12$mKKhWxVLzLD/lB.RBfFDreuszVF0UPT8yLjyM0GFhKjRrLK92G0Zu')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->RecoverPassword()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-28 06:38:21 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\SimpleApi\system\Email\Email.php:1762
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mail(): Failed ...', 'C:\\xampp\\htdocs...', 1762)
+#1 C:\xampp\htdocs\SimpleApi\system\Email\Email.php(1762): mail('raeeskhan3370@g...', '=?UTF-8?Q?Provi...', 'This is a multi...', 'Date: Mon, 28 O...', '-f proviewgolf@...')
+#2 C:\xampp\htdocs\SimpleApi\system\Email\Email.php(1694): CodeIgniter\Email\Email->sendWithMail()
+#3 C:\xampp\htdocs\SimpleApi\system\Email\Email.php(1589): CodeIgniter\Email\Email->spoolEmail()
+#4 C:\xampp\htdocs\SimpleApi\app\Controllers\HomeController.php(387): CodeIgniter\Email\Email->send()
+#5 C:\xampp\htdocs\SimpleApi\app\Controllers\HomeController.php(419): App\Controllers\HomeController->sendMail('raeeskhan3370@g...', 'VZbBdeRIM9$B')
+#6 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(933): App\Controllers\HomeController->RecoverPassword()
+#7 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+#8 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\SimpleApi\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\SimpleApi\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\SimpleApi\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2024-10-28 06:38:21 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2024-10-28 06:38:21 --> 
+CRITICAL - 2024-10-28 06:38:22 --> Error: Object of class CodeIgniter\Database\MySQLi\Builder could not be converted to string
+[Method: GET, Route: RecoverPassword]
+in APPPATH\Models\ApiModel.php on line 566.
+ 1 APPPATH\Controllers\HomeController.php(422): App\Models\ApiModel->updatePass('raeeskhan3370@gmail.com', '$2y$12$.7MbNkCpNnAnw2Nga7HcXu/Uw.ANyvZXXWPehxR60C4k/LbItfzii')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->RecoverPassword()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-28 06:38:34 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\SimpleApi\system\Email\Email.php:1762
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mail(): Failed ...', 'C:\\xampp\\htdocs...', 1762)
+#1 C:\xampp\htdocs\SimpleApi\system\Email\Email.php(1762): mail('raeeskhan3370@g...', '=?UTF-8?Q?Provi...', 'This is a multi...', 'Date: Mon, 28 O...', '-f proviewgolf@...')
+#2 C:\xampp\htdocs\SimpleApi\system\Email\Email.php(1694): CodeIgniter\Email\Email->sendWithMail()
+#3 C:\xampp\htdocs\SimpleApi\system\Email\Email.php(1589): CodeIgniter\Email\Email->spoolEmail()
+#4 C:\xampp\htdocs\SimpleApi\app\Controllers\HomeController.php(387): CodeIgniter\Email\Email->send()
+#5 C:\xampp\htdocs\SimpleApi\app\Controllers\HomeController.php(419): App\Controllers\HomeController->sendMail('raeeskhan3370@g...', 'k&TOMY0vmObN')
+#6 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(933): App\Controllers\HomeController->RecoverPassword()
+#7 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+#8 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\SimpleApi\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\SimpleApi\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\SimpleApi\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2024-10-28 06:38:34 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2024-10-28 06:38:34 --> 
+CRITICAL - 2024-10-28 06:38:34 --> Error: Object of class CodeIgniter\Database\MySQLi\Builder could not be converted to string
+[Method: GET, Route: RecoverPassword]
+in APPPATH\Models\ApiModel.php on line 566.
+ 1 APPPATH\Controllers\HomeController.php(422): App\Models\ApiModel->updatePass('raeeskhan3370@gmail.com', '$2y$12$r8fqJWA2llG3l4WI48G0QuKh.HhemzMJ5ohislHiW5444iGlBrcO.')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->RecoverPassword()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-28 06:40:08 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\SimpleApi\system\Email\Email.php:1762
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mail(): Failed ...', 'C:\\xampp\\htdocs...', 1762)
+#1 C:\xampp\htdocs\SimpleApi\system\Email\Email.php(1762): mail('raeeskhan3370@g...', '=?UTF-8?Q?Provi...', 'This is a multi...', 'Date: Mon, 28 O...', '-f proviewgolf@...')
+#2 C:\xampp\htdocs\SimpleApi\system\Email\Email.php(1694): CodeIgniter\Email\Email->sendWithMail()
+#3 C:\xampp\htdocs\SimpleApi\system\Email\Email.php(1589): CodeIgniter\Email\Email->spoolEmail()
+#4 C:\xampp\htdocs\SimpleApi\app\Controllers\HomeController.php(387): CodeIgniter\Email\Email->send()
+#5 C:\xampp\htdocs\SimpleApi\app\Controllers\HomeController.php(419): App\Controllers\HomeController->sendMail('raeeskhan3370@g...', 'rcoKsX6GwF#w')
+#6 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(933): App\Controllers\HomeController->RecoverPassword()
+#7 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+#8 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\SimpleApi\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\SimpleApi\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\SimpleApi\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2024-10-28 06:40:08 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2024-10-28 06:40:08 --> 
+CRITICAL - 2024-10-28 06:40:08 --> Error: Object of class CodeIgniter\Database\MySQLi\Builder could not be converted to string
+[Method: GET, Route: RecoverPassword]
+in APPPATH\Models\ApiModel.php on line 566.
+ 1 APPPATH\Controllers\HomeController.php(422): App\Models\ApiModel->updatePass('raeeskhan3370@gmail.com', '$2y$12$rOmDczHuk9QLzutJVWLcFuJpNPUdevpNnkLzOrNJvhCNuoGuGkb6G')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->RecoverPassword()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2024-10-28 06:44:30 --> [DEPRECATED] password_hash(): Passing null to parameter #1 ($password) of type string is deprecated in APPPATH\Controllers\HomeController.php on line 496.
+ 1 APPPATH\Controllers\HomeController.php(496): password_hash(Object(SensitiveParameterValue), '2y')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->insertData()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-28 06:44:30 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: insertData]
+in APPPATH\Models\ApiModel.php on line 146.
+ 1 APPPATH\Models\ApiModel.php(146): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\SimpleApi\\app\\Models\\ApiModel.php', 146)
+ 2 APPPATH\Controllers\HomeController.php(498): App\Models\ApiModel->insertUserData(null, 'new@gmail.com', '$2y$10$clbI78Yoin5XhFge4WahyuaPq3vJxtelK7z7vjyMh4qia7Ol6eF1.', null)
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->insertData()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2024-10-28 06:44:48 --> [DEPRECATED] password_hash(): Passing null to parameter #1 ($password) of type string is deprecated in APPPATH\Controllers\HomeController.php on line 496.
+ 1 APPPATH\Controllers\HomeController.php(496): password_hash(Object(SensitiveParameterValue), '2y')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->insertData()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-28 06:44:48 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: insertData]
+in APPPATH\Models\ApiModel.php on line 146.
+ 1 APPPATH\Models\ApiModel.php(146): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\SimpleApi\\app\\Models\\ApiModel.php', 146)
+ 2 APPPATH\Controllers\HomeController.php(498): App\Models\ApiModel->insertUserData(null, 'new123@gmail.com', '$2y$10$AlkKEvUW3zbbq/9NlbA3OuiHI0W7VFGIh2FeFfKHTBLIZnGOgQiS2', null)
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->insertData()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2024-10-28 06:51:57 --> [DEPRECATED] password_hash(): Passing null to parameter #1 ($password) of type string is deprecated in APPPATH\Controllers\HomeController.php on line 496.
+ 1 APPPATH\Controllers\HomeController.php(496): password_hash(Object(SensitiveParameterValue), '2y')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->insertData()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-28 06:51:57 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: insertData]
+in APPPATH\Models\ApiModel.php on line 146.
+ 1 APPPATH\Models\ApiModel.php(146): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\SimpleApi\\app\\Models\\ApiModel.php', 146)
+ 2 APPPATH\Controllers\HomeController.php(498): App\Models\ApiModel->insertUserData(null, 'raeekhan3370@gmail.com', '$2y$10$aYsAo2dC/E.xQMJuEIVH0ORhWUmq68l4gY4C6GYlASV7tXMzIvoHu', null)
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->insertData()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-28 06:55:42 --> TypeError: Cannot access offset of type string on string
+[Method: GET, Route: insertData]
+in APPPATH\Models\ApiModel.php on line 146.
+ 1 APPPATH\Controllers\HomeController.php(498): App\Models\ApiModel->insertUserData(1, 'amirjamal496@gmail.com', '$2y$10$ClJXye3IptP0WVoIweD44e4EyMgdRYxRnHJw.34V4siP5zeT5GJIC', 'Aamir')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->insertData()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-28 06:58:55 --> CodeIgniter\HTTP\Exceptions\HTTPException: Failed to parse JSON string. Error: Syntax error
+[Method: GET, Route: insertData]
+in SYSTEMPATH\HTTP\IncomingRequest.php on line 537.
+ 1 SYSTEMPATH\HTTP\IncomingRequest.php(537): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidJSON('Syntax error')
+ 2 APPPATH\Controllers\HomeController.php(477): CodeIgniter\HTTP\IncomingRequest->getJSON(true)
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->insertData()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-28 06:59:48 --> TypeError: Cannot access offset of type string on string
+[Method: GET, Route: insertData]
+in APPPATH\Models\ApiModel.php on line 146.
+ 1 APPPATH\Controllers\HomeController.php(498): App\Models\ApiModel->insertUserData(1, 'amirjamal496@gmail.com', '$2y$10$kcH7i7yw081umOz/ZftQY.t3Hr5XqHY9jeYpvjoJod2Q5/Hv5d9US', 'Aamir')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->insertData()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-28 07:01:22 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: insertData]
+in APPPATH\Models\ApiModel.php on line 146.
+ 1 APPPATH\Models\ApiModel.php(146): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\SimpleApi\\app\\Models\\ApiModel.php', 146)
+ 2 APPPATH\Controllers\HomeController.php(498): App\Models\ApiModel->insertUserData(1, 'amirjamal496@gmail.com', '$2y$10$JPu0ZNz6OzPas0kKLBltS.7rD53TfajhMFnbSwCfjnujLhkZC87oe', null)
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->insertData()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-28 07:10:11 --> ErrorException: Undefined array key "phone"
+[Method: GET, Route: insertData]
+in APPPATH\Models\ApiModel.php on line 148.
+ 1 APPPATH\Models\ApiModel.php(148): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "phone"', 'C:\\xampp\\htdocs\\SimpleApi\\app\\Models\\ApiModel.php', 148)
+ 2 APPPATH\Controllers\HomeController.php(498): App\Models\ApiModel->insertUserData(1, 'amirjamal496@gmail.com', '$2y$10$xN4aFT6knNkliHGjZW9mseL/QWd2wD7CLmq3oHqkAX1mCetvXXbBS', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->insertData()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-28 07:16:44 --> ErrorException: Undefined array key "phone"
+[Method: GET, Route: insertData]
+in APPPATH\Models\ApiModel.php on line 148.
+ 1 APPPATH\Models\ApiModel.php(148): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "phone"', 'C:\\xampp\\htdocs\\SimpleApi\\app\\Models\\ApiModel.php', 148)
+ 2 APPPATH\Controllers\HomeController.php(498): App\Models\ApiModel->insertUserData(1, 'amirjamal496@gmail.com', '$2y$10$i7CmvjpPSJZwksLNk6J3cO5KjAa86f6MqmeKfyf9Nh75BxMxdftb.', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->insertData()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-28 07:17:59 --> ErrorException: Undefined array key "phone"
+[Method: GET, Route: insertData]
+in APPPATH\Models\ApiModel.php on line 148.
+ 1 APPPATH\Models\ApiModel.php(148): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "phone"', 'C:\\xampp\\htdocs\\SimpleApi\\app\\Models\\ApiModel.php', 148)
+ 2 APPPATH\Controllers\HomeController.php(498): App\Models\ApiModel->insertUserData(1, 'amirjamal496@gmail.com', '$2y$10$SHIbeWCwbbgSjDnCmHxW8.RIaeN42bSzgsa.By6Q.p9aqJ.r1yXpO', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->insertData()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-28 07:22:46 --> ErrorException: Undefined array key "phone"
+[Method: GET, Route: insertData]
+in APPPATH\Models\ApiModel.php on line 148.
+ 1 APPPATH\Models\ApiModel.php(148): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "phone"', 'C:\\xampp\\htdocs\\SimpleApi\\app\\Models\\ApiModel.php', 148)
+ 2 APPPATH\Controllers\HomeController.php(498): App\Models\ApiModel->insertUserData(1, 'amirjamal496@gmail.com', '$2y$10$7Efl1S6MMR9OhjkGiWLKMOLfdmtVmmSfZLIxqmBBlQ6aEDlChxpeS', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->insertData()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-28 07:26:00 --> ErrorException: Undefined array key "phone"
+[Method: GET, Route: insertData]
+in APPPATH\Models\ApiModel.php on line 148.
+ 1 APPPATH\Models\ApiModel.php(148): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "phone"', 'C:\\xampp\\htdocs\\SimpleApi\\app\\Models\\ApiModel.php', 148)
+ 2 APPPATH\Controllers\HomeController.php(498): App\Models\ApiModel->insertUserData(1, 'amirjamal496@gmail.com', '$2y$10$tu.uVvuLs18gUBn9C0r5pOpnCcGD0xmqDfI/oGC.yz/iYYO4DsaWq', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->insertData()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-28 07:27:25 --> ErrorException: Undefined array key "phone"
+[Method: GET, Route: insertData]
+in APPPATH\Models\ApiModel.php on line 148.
+ 1 APPPATH\Models\ApiModel.php(148): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "phone"', 'C:\\xampp\\htdocs\\SimpleApi\\app\\Models\\ApiModel.php', 148)
+ 2 APPPATH\Controllers\HomeController.php(498): App\Models\ApiModel->insertUserData(1, 'amirjamal496@gmail.com', '$2y$10$ZxOOQCEaC/0WECc6GQnFZu1OEmOE2EenF.gNBlJOmgr/En8vtDpjS', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->insertData()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-28 07:55:39 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+[Method: GET, Route: GetTournamentScore]
+in SYSTEMPATH\Database\BaseConnection.php on line 927.
+ 1 APPPATH\Models\ApiModel.php(20): CodeIgniter\Database\BaseConnection->table(null)
+ 2 APPPATH\Controllers\HomeController.php(136): App\Models\ApiModel->getTournamentScore('2024-10-26 11:31:14', '72')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->TournamentScore()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-28 09:32:27 --> mysqli_sql_exception: Not unique table/alias: 'games' in C:\xampp\htdocs\SimpleApi\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\SimpleApi\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\SimpleApi\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\SimpleApi\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\SimpleApi\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\SimpleApi\app\Models\ApiModel.php(46): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\SimpleApi\app\Controllers\HomeController.php(229): App\Models\ApiModel->getPlayRoundScore('2024-10-26 11:3...', '72')
+#6 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(933): App\Controllers\HomeController->playRoundScore()
+#7 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+#8 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\SimpleApi\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\SimpleApi\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\SimpleApi\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-10-28 09:32:27 --> CodeIgniter\Database\Exceptions\DatabaseException: Not unique table/alias: 'games'
+[Method: GET, Route: getplayroundscore]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = :DateTime:
+AND `StudentId` = :StudentId:
+AND `GameType` = :GameType:', [...], false)
+ 2 APPPATH\Models\ApiModel.php(46): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\HomeController.php(229): App\Models\ApiModel->getPlayRoundScore('2024-10-26 11:31:14', '72')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->playRoundScore()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-28 09:32:27 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Not unique table/alias: 'games'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = \'2024-10-26 11:31:14\'
+AND `StudentId` = \'72\'
+AND `GameType` = 2')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = \'2024-10-26 11:31:14\'
+AND `StudentId` = \'72\'
+AND `GameType` = 2')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = :DateTime:
+AND `StudentId` = :StudentId:
+AND `GameType` = :GameType:', [...], false)
+ 4 APPPATH\Models\ApiModel.php(46): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\HomeController.php(229): App\Models\ApiModel->getPlayRoundScore('2024-10-26 11:31:14', '72')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->playRoundScore()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-28 09:32:27 --> [Caused by] mysqli_sql_exception: Not unique table/alias: 'games'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = \'2024-10-26 11:31:14\'
+AND `StudentId` = \'72\'
+AND `GameType` = 2', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = \'2024-10-26 11:31:14\'
+AND `StudentId` = \'72\'
+AND `GameType` = 2')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = \'2024-10-26 11:31:14\'
+AND `StudentId` = \'72\'
+AND `GameType` = 2')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = :DateTime:
+AND `StudentId` = :StudentId:
+AND `GameType` = :GameType:', [...], false)
+ 5 APPPATH\Models\ApiModel.php(46): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\HomeController.php(229): App\Models\ApiModel->getPlayRoundScore('2024-10-26 11:31:14', '72')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->playRoundScore()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-28 09:32:51 --> mysqli_sql_exception: Not unique table/alias: 'games' in C:\xampp\htdocs\SimpleApi\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\SimpleApi\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\SimpleApi\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\SimpleApi\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\SimpleApi\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\SimpleApi\app\Models\ApiModel.php(46): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\SimpleApi\app\Controllers\HomeController.php(229): App\Models\ApiModel->getPlayRoundScore('2024-10-26 11:3...', '72')
+#6 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(933): App\Controllers\HomeController->playRoundScore()
+#7 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+#8 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\SimpleApi\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\SimpleApi\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\SimpleApi\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-10-28 09:32:51 --> CodeIgniter\Database\Exceptions\DatabaseException: Not unique table/alias: 'games'
+[Method: GET, Route: getplayroundscore]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = :DateTime:
+AND `StudentId` = :StudentId:', [...], false)
+ 2 APPPATH\Models\ApiModel.php(46): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\HomeController.php(229): App\Models\ApiModel->getPlayRoundScore('2024-10-26 11:31:14', '72')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->playRoundScore()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-28 09:32:51 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Not unique table/alias: 'games'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = \'2024-10-26 11:31:14\'
+AND `StudentId` = \'72\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = \'2024-10-26 11:31:14\'
+AND `StudentId` = \'72\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = :DateTime:
+AND `StudentId` = :StudentId:', [...], false)
+ 4 APPPATH\Models\ApiModel.php(46): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\HomeController.php(229): App\Models\ApiModel->getPlayRoundScore('2024-10-26 11:31:14', '72')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->playRoundScore()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-28 09:32:51 --> [Caused by] mysqli_sql_exception: Not unique table/alias: 'games'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = \'2024-10-26 11:31:14\'
+AND `StudentId` = \'72\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = \'2024-10-26 11:31:14\'
+AND `StudentId` = \'72\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = \'2024-10-26 11:31:14\'
+AND `StudentId` = \'72\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = :DateTime:
+AND `StudentId` = :StudentId:', [...], false)
+ 5 APPPATH\Models\ApiModel.php(46): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\HomeController.php(229): App\Models\ApiModel->getPlayRoundScore('2024-10-26 11:31:14', '72')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->playRoundScore()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-28 09:33:44 --> mysqli_sql_exception: Not unique table/alias: 'games' in C:\xampp\htdocs\SimpleApi\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\SimpleApi\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\SimpleApi\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\SimpleApi\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\SimpleApi\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\SimpleApi\app\Models\ApiModel.php(46): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\SimpleApi\app\Controllers\HomeController.php(229): App\Models\ApiModel->getPlayRoundScore('2024-10-26 11:3...', '72')
+#6 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(933): App\Controllers\HomeController->playRoundScore()
+#7 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+#8 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\SimpleApi\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\SimpleApi\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\SimpleApi\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-10-28 09:33:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Not unique table/alias: 'games'
+[Method: GET, Route: getplayroundscore]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = :DateTime:
+AND `StudentId` = :StudentId:', [...], false)
+ 2 APPPATH\Models\ApiModel.php(46): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\HomeController.php(229): App\Models\ApiModel->getPlayRoundScore('2024-10-26 11:31:14', '72')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->playRoundScore()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-28 09:33:44 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Not unique table/alias: 'games'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = \'2024-10-26 11:31:14\'
+AND `StudentId` = \'72\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = \'2024-10-26 11:31:14\'
+AND `StudentId` = \'72\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = :DateTime:
+AND `StudentId` = :StudentId:', [...], false)
+ 4 APPPATH\Models\ApiModel.php(46): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\HomeController.php(229): App\Models\ApiModel->getPlayRoundScore('2024-10-26 11:31:14', '72')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->playRoundScore()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-28 09:33:44 --> [Caused by] mysqli_sql_exception: Not unique table/alias: 'games'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = \'2024-10-26 11:31:14\'
+AND `StudentId` = \'72\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = \'2024-10-26 11:31:14\'
+AND `StudentId` = \'72\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = \'2024-10-26 11:31:14\'
+AND `StudentId` = \'72\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = :DateTime:
+AND `StudentId` = :StudentId:', [...], false)
+ 5 APPPATH\Models\ApiModel.php(46): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\HomeController.php(229): App\Models\ApiModel->getPlayRoundScore('2024-10-26 11:31:14', '72')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->playRoundScore()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-28 09:33:59 --> mysqli_sql_exception: Not unique table/alias: 'games' in C:\xampp\htdocs\SimpleApi\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\SimpleApi\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\SimpleApi\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\SimpleApi\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\SimpleApi\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\SimpleApi\app\Models\ApiModel.php(46): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\SimpleApi\app\Controllers\HomeController.php(229): App\Models\ApiModel->getPlayRoundScore('2024-10-26 11:3...', '72')
+#6 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(933): App\Controllers\HomeController->playRoundScore()
+#7 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+#8 C:\xampp\htdocs\SimpleApi\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\SimpleApi\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\SimpleApi\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\SimpleApi\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-10-28 09:33:59 --> CodeIgniter\Database\Exceptions\DatabaseException: Not unique table/alias: 'games'
+[Method: GET, Route: getplayroundscore]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = :DateTime:
+AND `StudentId` = :StudentId:', [...], false)
+ 2 APPPATH\Models\ApiModel.php(46): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\HomeController.php(229): App\Models\ApiModel->getPlayRoundScore('2024-10-26 11:31:14', '72')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->playRoundScore()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-28 09:33:59 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Not unique table/alias: 'games'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = \'2024-10-26 11:31:14\'
+AND `StudentId` = \'72\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = \'2024-10-26 11:31:14\'
+AND `StudentId` = \'72\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = :DateTime:
+AND `StudentId` = :StudentId:', [...], false)
+ 4 APPPATH\Models\ApiModel.php(46): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\HomeController.php(229): App\Models\ApiModel->getPlayRoundScore('2024-10-26 11:31:14', '72')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->playRoundScore()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-28 09:33:59 --> [Caused by] mysqli_sql_exception: Not unique table/alias: 'games'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = \'2024-10-26 11:31:14\'
+AND `StudentId` = \'72\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = \'2024-10-26 11:31:14\'
+AND `StudentId` = \'72\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = \'2024-10-26 11:31:14\'
+AND `StudentId` = \'72\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `games`, `games`
+WHERE `DateTime` = :DateTime:
+AND `StudentId` = :StudentId:', [...], false)
+ 5 APPPATH\Models\ApiModel.php(46): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\HomeController.php(229): App\Models\ApiModel->getPlayRoundScore('2024-10-26 11:31:14', '72')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->playRoundScore()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-28 09:51:06 --> Exception in addGames: Undefined array key "gameType"
+ERROR - 2024-10-28 09:52:39 --> Exception in addGames: Undefined array key "gameType"
+ERROR - 2024-10-28 09:53:35 --> Exception in addGames: Undefined array key "gameType"
+ERROR - 2024-10-28 10:00:12 --> Exception in addGames: Undefined array key "gameType"
+ERROR - 2024-10-28 10:03:15 --> Exception in addGames: Undefined array key "gameType"
+CRITICAL - 2024-10-28 10:11:59 --> ArgumentCountError: Too few arguments to function App\Models\ApiModel::addGames(), 2 passed in C:\xampp\htdocs\SimpleApi\app\Controllers\HomeController.php on line 333 and exactly 3 expected
+[Method: GET, Route: addGames]
+in APPPATH\Models\ApiModel.php on line 56.
+ 1 APPPATH\Controllers\HomeController.php(333): App\Models\ApiModel->addGames([...], '72')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->addGames()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-28 10:13:34 --> Exception in addGames: Undefined array key "gameType"
+ERROR - 2024-10-28 10:19:20 --> Exception in addGames: Undefined array key "gameType"
+ERROR - 2024-10-28 10:19:43 --> Exception in addGames: Undefined array key "gameType"
+ERROR - 2024-10-28 10:21:09 --> Exception in addGames: Undefined array key "gameType"
+ERROR - 2024-10-28 10:46:06 --> Exception in addGames: Undefined array key "gameType"
+ERROR - 2024-10-28 10:46:57 --> Exception in addGames: Undefined array key "gameType"
+ERROR - 2024-10-28 10:48:01 --> Exception in addGames: Undefined array key "gameType"
+ERROR - 2024-10-28 10:49:10 --> Exception in addGames: Undefined array key "gameType"

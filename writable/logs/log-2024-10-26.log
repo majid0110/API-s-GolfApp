@@ -1,0 +1,33 @@
+CRITICAL - 2024-10-26 09:46:58 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+[Method: GET, Route: GetTournamentScore]
+in SYSTEMPATH\Database\BaseConnection.php on line 927.
+ 1 APPPATH\Models\ApiModel.php(20): CodeIgniter\Database\BaseConnection->table(null)
+ 2 APPPATH\Controllers\HomeController.php(135): App\Models\ApiModel->getTournamentScore('2024-10-26 11:31:14', '72')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->TournamentScore()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-26 09:48:09 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+[Method: GET, Route: GetTournamentScore]
+in SYSTEMPATH\Database\BaseConnection.php on line 927.
+ 1 APPPATH\Models\ApiModel.php(20): CodeIgniter\Database\BaseConnection->table(null)
+ 2 APPPATH\Controllers\HomeController.php(135): App\Models\ApiModel->getTournamentScore('2024-10-26 11:31:14', '72')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->TournamentScore()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-26 10:54:26 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+[Method: GET, Route: GetTournamentScore]
+in SYSTEMPATH\Database\BaseConnection.php on line 927.
+ 1 APPPATH\Models\ApiModel.php(20): CodeIgniter\Database\BaseConnection->table(null)
+ 2 APPPATH\Controllers\HomeController.php(135): App\Models\ApiModel->getTournamentScore('2024-10-26 11:31:14', '72')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomeController->TournamentScore()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
